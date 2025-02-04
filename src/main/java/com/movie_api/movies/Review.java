@@ -1,5 +1,6 @@
 package com.movie_api.movies;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 public class Review {
     @Id
+    @JsonProperty
     private ObjectId id;
+    @JsonProperty
     private String body;
+
+    public Review(String body) {
+        this.body = body;
+    }
 }
